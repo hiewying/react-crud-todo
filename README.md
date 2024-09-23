@@ -1,6 +1,7 @@
 # CRUD TODO App in React
 
-![img1](https://github.com/user-attachments/assets/42a7334f-2171-462b-b93b-222ec9eba214)
+![img1](https://github.com/user-attachments/assets/d48f92ec-6908-410f-a5a3-c8014b367841)
+
 
 **To set up and run the project locally, please follow these steps:**
 1. Run the following command in the project directory to install dependencies: <br/>
