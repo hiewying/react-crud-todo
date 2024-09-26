@@ -1,4 +1,4 @@
-# CRUD TODO App in React
+# CRUD TODO App in React JS
 
 ![img1](https://github.com/user-attachments/assets/d48f92ec-6908-410f-a5a3-c8014b367841)
 
