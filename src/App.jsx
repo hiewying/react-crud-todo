@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import ToDoCard from "./components/ToDoCard"
 import ToDoInput from "./components/ToDoInput"
 import ToDoList from "./components/ToDoList"
 
@@ -14,10 +13,13 @@ function App() {
   const [todoValue, setTodoValue] = useState('');
 
   function persistData(newList){
-    localStorage.setItem('todos', JSON.stringify({todos: newList}))
+    localStorage.setItem('todos2', JSON.stringify({todos: newList}))
   }
 
   function handleAddTodos(newTodo){
+    if(!newTodo)
+        return alert('Todo cannot be empty.')
+
     const newTodoList = [...todos, newTodo];
     setTodos(newTodoList);
     persistData(newTodoList)
@@ -35,6 +37,10 @@ function App() {
 
   function handleEditTodo(index){
     const valueToBeEdited = todos[index]
+
+    if(!valueToBeEdited)
+      return alert('Edited Todo cannot be empty.')
+
     setTodoValue(valueToBeEdited)
     handleDeleteTodo(index)
   }
@@ -42,17 +48,16 @@ function App() {
   // save todos in local storage
   useEffect(() => {
     if(!localStorage){
-      return
+      return 
     }
 
-    let localTodos = localStorage.getItem('todos')
+    let localTodos = localStorage.getItem('todos2')
     if(!localTodos){
-      return
+      return;
     }
 
-    localTodos = JSON.parse(localTodos).todos
+    localTodos = JSON.parse(localTodos).todos 
     setTodos(localTodos)
-    
   }, [])
 
   return (
